@@ -4,6 +4,14 @@
 }
 
 .todo {
-    padding: 1%;
+    padding: 2%;
+    position: relative;
     /*margin: 2px !important;*/
+}
+
+.todo .actions {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
 }
