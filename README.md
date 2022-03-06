@@ -14,6 +14,21 @@ As you read before, this is a sample TODO app. TODOs divide in 3 categories.
 
 Each todo is in a box that contains **Name** and **Caption**.
 
+### Previews
+
+![Image 1](public/images/pic1.png)
+![Image 2](public/images/pic2.png)
+![Image 3](public/images/pic3.png)
+
+### How to run?
+
+Clone and run it.
+
+```shell
+$ git clone https://github.com/BlackIQ/React-Practical-1
+$ npm run
+```
+
 ### Notice
 
 **App is not completed yet.**
