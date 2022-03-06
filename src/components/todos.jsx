@@ -6,7 +6,7 @@ class Todos extends Component {
         todos: [
             {id: 1, name: 'Go', caption: 'Say hi', status: 'not'},
             {id: 1, name: 'Come', caption: 'Say bye', status: 'done'},
-            {id: 1, name: 'Here', caption: 'Eat', status: 'in'},
+            {id: 1, name: 'Here', caption: 'Eat', status: 'trash'},
         ]
     };
 
