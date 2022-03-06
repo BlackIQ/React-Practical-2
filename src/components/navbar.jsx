@@ -1,5 +1,5 @@
 import React from "react";
-import {FaGithub, FaGlobeAmericas, FaPlus} from "react-icons/fa";
+import {FaGithub, FaGlobeAmericas} from "react-icons/fa";
 import Inputs from "./inputs";
 
 class Navbar extends React.Component {
