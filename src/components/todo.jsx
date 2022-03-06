@@ -3,16 +3,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faCheck, faTrash} from "@fortawesome/free-solid-svg-icons";
 
 class Todo extends Component {
-    state = {};
-
     render() {
         return (
-            <div className="col-md-6 todo rounded-4 border border-secondary">
+            <div className={this.classes()}>
                 <div className="m-1">
                     <p>
-                        Name
+                        {this.props.todo.name}
                         <br />
-                        <small>Caption</small>
+                        <small>{this.props.todo.caption}</small>
                     </p>
                     <div>
                         <button className="btn btn-outline-success float-start"><FontAwesomeIcon icon={faCheck} /></button>
@@ -21,6 +19,18 @@ class Todo extends Component {
                 </div>
             </div>
         )
+    }
+
+    buttons() {
+
+    }
+
+    classes() {
+        let c = 'col-md-6 todo rounded-4 border border-';
+        if (this.props.todo.status === 'not') c += 'danger';
+        else if (this.props.todo.status === 'done') c += 'success';
+        else c += 'primary';
+        return c;
     }
 }
 
