@@ -1,18 +1,12 @@
-import React, {Component} from "react";
+import React from "react";
 import Todo from "./todo";
-import todo from "./todo";
 
-class Todos extends Component {
+class Todos extends React.Component {
     state = {
         todos: [
-            {id: 1, name: 'Go', caption: 'Say hi', status: 'not'},
-            {id: 2, name: 'Come', caption: 'Say bye', status: 'done'},
-            {id: 3, name: 'Here', caption: 'Eat', status: 'trash'},
-            {id: 4, name: 'Here', caption: 'Eat', status: 'trash'},
-            {id: 5, name: 'Here', caption: 'Eat', status: 'trash'},
-            {id: 6, name: 'Here', caption: 'Eat', status: 'trash'},
-            {id: 7, name: 'Here', caption: 'Eat', status: 'trash'},
-            {id: 8, name: 'Here', caption: 'Eat', status: 'trash'},
+            {id: 1, name: 'Call', caption: 'Call Majid', status: 'not'},
+            {id: 2, name: 'TODO', caption: 'Work on TODO App', status: 'done'},
+            {id: 3, name: 'React', caption: 'Download React course', status: 'trash'},
         ]
     };
 

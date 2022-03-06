@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from "react";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faCheck, faTrash, faClock, faCaretDown} from "@fortawesome/free-solid-svg-icons";
 
-class Todo extends Component {
+class Todo extends React.Component {
     render() {
         return (
             <div className="col-md-3">
