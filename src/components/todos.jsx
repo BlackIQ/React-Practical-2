@@ -6,8 +6,13 @@ class Todos extends Component {
     state = {
         todos: [
             {id: 1, name: 'Go', caption: 'Say hi', status: 'not'},
-            {id: 1, name: 'Come', caption: 'Say bye', status: 'done'},
-            {id: 1, name: 'Here', caption: 'Eat', status: 'trash'},
+            {id: 2, name: 'Come', caption: 'Say bye', status: 'done'},
+            {id: 3, name: 'Here', caption: 'Eat', status: 'trash'},
+            {id: 4, name: 'Here', caption: 'Eat', status: 'trash'},
+            {id: 5, name: 'Here', caption: 'Eat', status: 'trash'},
+            {id: 6, name: 'Here', caption: 'Eat', status: 'trash'},
+            {id: 7, name: 'Here', caption: 'Eat', status: 'trash'},
+            {id: 8, name: 'Here', caption: 'Eat', status: 'trash'},
         ]
     };
 
@@ -43,6 +48,7 @@ class Todos extends Component {
         const index = todos.indexOf(todo);
         todos[index].status = 'not';
         this.setState({todos});
+        document.getElementById('dropdown-menu').hidden();
     }
 
     deleteTodo = todo => {
