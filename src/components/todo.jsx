@@ -7,11 +7,11 @@ class Todo extends Component {
         return (
             <div className="col-md-4">
                 <div className={this.classes()}>
-                    <p className={this.colorClass()}>
+                    <span className={this.colorClass()}>
                         {this.props.todo.name}
                         <br />
                         <small>{this.props.todo.caption}</small>
-                    </p>
+                    </span>
                     <div className="actions">
                         <div className="dropdown">
                             <button className={this.actionClass()} type="button" id="dropmenu" data-mdb-toggle="dropdown" aria-expanded="false">
@@ -30,13 +30,13 @@ class Todo extends Component {
             return (
                 <ul className="dropdown-menu" aria-labelledby="dropmenu">
                     <li>
-                        <button className="dropdown-item text-success" type="button">
+                        <button onClick={() => this.props.onDone(this.props.todo)} className="dropdown-item text-success" type="button">
                             Done
                             <span className="float-end"><FontAwesomeIcon icon={faCheck} /></span>
                         </button>
                     </li>
                     <li>
-                        <button className="dropdown-item text-danger" type="button">
+                        <button onClick={() => this.props.onDelete(this.props.todo)} className="dropdown-item text-danger" type="button">
                             Delete
                             <span className="float-end"><FontAwesomeIcon icon={faTrash} /></span>
                         </button>
@@ -47,13 +47,13 @@ class Todo extends Component {
             return (
                 <ul className="dropdown-menu" aria-labelledby="dropmenu">
                     <li>
-                        <button className="dropdown-item text-primary" type="button">
+                        <button onClick={() => this.props.onNotDone(this.props.todo)} className="dropdown-item text-primary" type="button">
                             Not Done
                             <span className="float-end"><FontAwesomeIcon icon={faClock} /></span>
                         </button>
                     </li>
                     <li>
-                        <button className="dropdown-item text-danger" type="button">
+                        <button onClick={() => this.props.onDelete(this.props.todo)} className="dropdown-item text-danger" type="button">
                             Delete
                             <span className="float-end"><FontAwesomeIcon icon={faTrash} /></span>
                         </button>
