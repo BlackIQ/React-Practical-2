@@ -5,7 +5,7 @@ import {faCheck, faTrash, faClock, faBars} from "@fortawesome/free-solid-svg-ico
 class Todo extends Component {
     render() {
         return (
-            <div className="col-md-4">
+            <div className="col-md-3">
                 <div className={this.classes()}>
                     <span className={this.colorClass()}>
                         {this.props.todo.name}
@@ -64,13 +64,13 @@ class Todo extends Component {
             return (
                 <ul className="dropdown-menu" aria-labelledby="dropmenu">
                     <li>
-                        <button className="dropdown-item text-success" type="button">
+                        <button onClick={() => this.props.onDone(this.props.todo)} className="dropdown-item text-success" type="button">
                             Done
                             <span className="float-end"><FontAwesomeIcon icon={faCheck} /></span>
                         </button>
                     </li>
                     <li>
-                        <button className="dropdown-item text-primary" type="button">
+                        <button onClick={() => this.props.onNotDone(this.props.todo)} className="dropdown-item text-primary" type="button">
                             Not Done
                             <span className="float-end"><FontAwesomeIcon icon={faClock} /></span>
                         </button>
