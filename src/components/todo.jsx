@@ -1,35 +1,106 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faCheck, faTrash} from "@fortawesome/free-solid-svg-icons";
+import {faCheck, faTrash, faClock, faBars} from "@fortawesome/free-solid-svg-icons";
 
 class Todo extends Component {
     render() {
         return (
-            <div className={this.classes()}>
-                <div className="m-1">
-                    <p>
+            <div className="col-md-4">
+                <div className={this.classes()}>
+                    <p className={this.colorClass()}>
                         {this.props.todo.name}
                         <br />
                         <small>{this.props.todo.caption}</small>
                     </p>
-                    <div>
-                        <button className="btn btn-outline-success float-start"><FontAwesomeIcon icon={faCheck} /></button>
-                        <button className="btn btn-outline-danger float-end"><FontAwesomeIcon icon={faTrash} /></button>
+                    <div className="actions">
+                        <div className="dropdown">
+                            <button className={this.actionClass()} type="button" id="dropmenu" data-mdb-toggle="dropdown" aria-expanded="false">
+                                <FontAwesomeIcon icon={faBars} />
+                            </button>
+                            {this.actions()}
+                        </div>
                     </div>
                 </div>
             </div>
         )
     }
 
-    buttons() {
+    actions() {
+        if (this.props.todo.status === 'not') {
+            return (
+                <ul className="dropdown-menu" aria-labelledby="dropmenu">
+                    <li>
+                        <button className="dropdown-item text-success" type="button">
+                            Done
+                            <span className="float-end"><FontAwesomeIcon icon={faCheck} /></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button className="dropdown-item text-danger" type="button">
+                            Delete
+                            <span className="float-end"><FontAwesomeIcon icon={faTrash} /></span>
+                        </button>
+                    </li>
+                </ul>
+            );
+        } else if (this.props.todo.status === 'done') {
+            return (
+                <ul className="dropdown-menu" aria-labelledby="dropmenu">
+                    <li>
+                        <button className="dropdown-item text-primary" type="button">
+                            Not Done
+                            <span className="float-end"><FontAwesomeIcon icon={faClock} /></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button className="dropdown-item text-danger" type="button">
+                            Delete
+                            <span className="float-end"><FontAwesomeIcon icon={faTrash} /></span>
+                        </button>
+                    </li>
+                </ul>
+            );
+        } else if (this.props.todo.status === 'trash') {
+            return (
+                <ul className="dropdown-menu" aria-labelledby="dropmenu">
+                    <li>
+                        <button className="dropdown-item text-success" type="button">
+                            Done
+                            <span className="float-end"><FontAwesomeIcon icon={faCheck} /></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button className="dropdown-item text-primary" type="button">
+                            Not Done
+                            <span className="float-end"><FontAwesomeIcon icon={faClock} /></span>
+                        </button>
+                    </li>
+                </ul>
+            );
+        }
+    }
 
+    actionClass() {
+        let c = 'btn btn-';
+        if (this.props.todo.status === 'not') c += 'primary';
+        else if (this.props.todo.status === 'done') c += 'success';
+        else if (this.props.todo.status === 'trash') c += 'danger';
+        return c;
+    }
+
+    colorClass() {
+        let c = 'text-';
+        if (this.props.todo.status === 'not') c += 'primary';
+        else if (this.props.todo.status === 'done') c += 'success';
+        else if (this.props.todo.status === 'trash') c += 'danger';
+        return c;
     }
 
     classes() {
-        let c = 'col-md-6 todo rounded-4 border border-';
-        if (this.props.todo.status === 'not') c += 'danger';
+        let c = 'todo m-1 rounded-4 border border-';
+        if (this.props.todo.status === 'not') c += 'primary';
         else if (this.props.todo.status === 'done') c += 'success';
-        else c += 'primary';
+        else if (this.props.todo.status === 'trash') c += 'danger';
         return c;
     }
 }
