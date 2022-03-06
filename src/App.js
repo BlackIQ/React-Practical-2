@@ -1,6 +1,6 @@
 import React from "react";
 import './App.css';
-import Todo from "./components/todo";
+import Todos from "./components/todos";
 import Navbar from "./components/navbar";
 
 function App() {
@@ -9,12 +9,7 @@ function App() {
             <Navbar />
             <main className="container body">
                 <div className="row">
-                    <Todo/>
-                    <Todo/>
-                    <Todo/>
-                    <Todo/>
-                    <Todo/>
-                    <Todo/>
+                    <Todos />
                 </div>
             </main>
         </React.Fragment>
