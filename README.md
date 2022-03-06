@@ -16,9 +16,20 @@ Each todo is in a box that contains **Name** and **Caption**.
 
 ### Previews
 
-![Image 1](public/images/pic1.png)
-![Image 2](public/images/pic2.png)
-![Image 3](public/images/pic3.png)
+![Index](public/images/index.png)
+![Add](public/images/add.png)
+![Dropdown](public/images/dropdown.png)
+
+### Dropdowns
+
+All dropdowns have 3 items:
+
+- Done
+- Not done
+- Trash
+
+When you open a dropdown, if status of todo is **done**, done will be **disabled**.
+Same for others. It todo is deleted, the **trash** item will be also disabled.
 
 ### How to run?
 
