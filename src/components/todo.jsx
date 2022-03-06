@@ -1,6 +1,5 @@
 import React from "react";
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faCheck, faTrash, faClock, faCaretDown} from "@fortawesome/free-solid-svg-icons";
+import {FaCaretDown, FaCheck, FaTimes, FaTrash} from "react-icons/fa";
 
 class Todo extends React.Component {
     render() {
@@ -15,25 +14,25 @@ class Todo extends React.Component {
                     <div className="actions">
                         <div className="dropdown">
                             <span className="text-dark pointer" id="dropmenu" data-mdb-toggle="dropdown" aria-expanded="false">
-                                <FontAwesomeIcon icon={faCaretDown} />
+                                <FaCaretDown />
                             </span>
                             <ul className="dropdown-menu" aria-labelledby="dropmenu">
                                 <li>
                                     <button onClick={() => this.props.onDone(this.props.todo)} className="dropdown-item text-success" type="button" disabled={this.props.todo.status === 'done' ? true : null}>
                                         Done
-                                        <span className="float-end"><FontAwesomeIcon icon={faCheck} /></span>
+                                        <span className="float-end"><FaCheck /></span>
                                     </button>
                                 </li>
                                 <li>
                                     <button onClick={() => this.props.onNotDone(this.props.todo)} className="dropdown-item text-primary" type="button" disabled={this.props.todo.status === 'not' ? true : null}>
                                         Not Done
-                                        <span className="float-end"><FontAwesomeIcon icon={faClock} /></span>
+                                        <span className="float-end"><FaTimes /></span>
                                     </button>
                                 </li>
                                 <li>
                                     <button onClick={() => this.props.onDelete(this.props.todo)} className="dropdown-item text-danger" type="button" disabled={this.props.todo.status === 'trash' ? true : null}>
                                         Delete
-                                        <span className="float-end"><FontAwesomeIcon icon={faTrash} /></span>
+                                        <span className="float-end"><FaTrash /></span>
                                     </button>
                                 </li>
                             </ul>
