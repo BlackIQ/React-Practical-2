@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import Todo from "./todo";
+import todo from "./todo";
 
 class Todos extends Component {
     state = {
@@ -19,12 +20,36 @@ class Todos extends Component {
                             <Todo
                                 key={todo.id}
                                 todo={todo}
+                                onDelete={this.deleteTodo}
+                                onDone={this.doneTodo}
+                                onNotDone={this.notDoneTodo}
                             />
                         )
                     )
                 }
             </React.Fragment>
         )
+    }
+
+    doneTodo = todo =>  {
+        const todos = [...this.state.todos];
+        const index = todos.indexOf(todo);
+        todos[index].status = 'done';
+        this.setState({todos});
+    }
+
+    notDoneTodo = todo =>  {
+        const todos = [...this.state.todos];
+        const index = todos.indexOf(todo);
+        todos[index].status = 'not';
+        this.setState({todos});
+    }
+
+    deleteTodo = todo => {
+        const todos = [...this.state.todos];
+        const index = todos.indexOf(todo);
+        todos[index].status = 'trash';
+        this.setState({todos});
     }
 }
 
